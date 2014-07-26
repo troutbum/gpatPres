@@ -1,0 +1,33 @@
+General Physical Attributes Test (GPAT)
+========================================================
+author: 
+date: July 24, 2014
+
+<small>
+CrossFit503
+Portland, OR
+</small>
+
+10 Attributes
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
