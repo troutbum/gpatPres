@@ -1,42 +1,40 @@
-General Physical Attributes Test (GPAT)
+GPAT
 ========================================================
-author: 
-date: July 24, 2014
+author: General Physical Attributes Test
+date: Visualization App
 
-<small>
-CrossFit503
-Portland, OR
+<small> 
+https://troutbum.shinyapps.io/gpat/
 </small>
 
-10 Attributes
+Visualization of 10 Fitness Attributes
+========================================================
+- Accuracy
+- Agility
+- Balance
+- Coordination
+- Endurance
+- Flexibility
+- Power
+- Stamina
+- Strength
+- Speed
+
+Plot Your Performance Test
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+![plot of chunk unnamed-chunk-1](gpatPresentation-figure/unnamed-chunk-1.png) 
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
-========================================================
-
-
-```r
-summary(cars)
-```
-
-```
-     speed           dist    
- Min.   : 4.0   Min.   :  2  
- 1st Qu.:12.0   1st Qu.: 26  
- Median :15.0   Median : 36  
- Mean   :15.4   Mean   : 43  
- 3rd Qu.:19.0   3rd Qu.: 56  
- Max.   :25.0   Max.   :120  
-```
-
-Slide With Plot
+Wordcloud of your Performance Test
 ========================================================
 
 ![plot of chunk unnamed-chunk-2](gpatPresentation-figure/unnamed-chunk-2.png) 
+
+GPAT App
+========================================================
+- Visualization tool for fitness assessment
+- Plot your General Physical Attributes Test
+- Plan your next training cycle
+
+
+https://troutbum.shinyapps.io/gpat/

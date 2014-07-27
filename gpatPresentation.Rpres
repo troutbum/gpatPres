@@ -1,33 +1,102 @@
-General Physical Attributes Test (GPAT)
+GPAT
 ========================================================
-author: 
-date: July 24, 2014
+author: General Physical Attributes Test
+date: Visualization App
 
-<small>
-CrossFit503
-Portland, OR
+<small> 
+https://troutbum.shinyapps.io/gpat/
 </small>
 
-10 Attributes
+Visualization of 10 Fitness Attributes
 ========================================================
+- Accuracy
+- Agility
+- Balance
+- Coordination
+- Endurance
+- Flexibility
+- Power
+- Stamina
+- Strength
+- Speed
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
-========================================================
-
-```{r}
-summary(cars)
-```
-
-Slide With Plot
+Plot Your Performance Test
 ========================================================
 
 ```{r, echo=FALSE}
-plot(cars)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(datasets)
+library(RColorBrewer)
+
+colors1 <- brewer.pal(9, "Greens")
+palette1 <- colorRampPalette(colors1)
+colors2 <- brewer.pal(9, "YlOrRd")
+palette2 <- colorRampPalette(colors2)
+
+datasetInput <- data.frame(
+        Name = c("Accuracy",
+                 "Agility",
+                 "Balance",
+                 "Coordination",
+                 "Endurance",
+                 "Flexibility",
+                 "Power",
+                 "Stamina",
+                 "Strength",
+                 "Speed"),
+        Value = c(2,4,6,9,3,5,10,1,7,3), stringsAsFactors=FALSE)
+
+# plot datasetInput
+ggplot(datasetInput, aes(Name, Value, fill = factor(Value))) + 
+        geom_bar(stat="identity") + 
+        coord_polar() +
+        theme(legend.position="none") +
+        labs(x="June 25, 2014") + 
+        labs(y="") + 
+        scale_y_continuous(limits=c(0,10)) +
+        labs(title="") +     
+        scale_fill_manual(values=palette1(10)) +
+        theme(plot.title = element_text(size = rel(2), face="bold"))
 ```
+
+Wordcloud of your Performance Test
+========================================================
+
+```{r, echo=FALSE}
+library(RColorBrewer)
+library(wordcloud)
+library(tm)
+
+colors1 <- brewer.pal(9, "Greens")
+palette1 <- colorRampPalette(colors1)
+colors2 <- brewer.pal(9, "YlOrRd")
+palette2 <- colorRampPalette(colors2)
+
+datasetInput <- data.frame(
+        Name = c("Accuracy",
+                 "Agility",
+                 "Balance",
+                 "Coordination",
+                 "Endurance",
+                 "Flexibility",
+                 "Power",
+                 "Stamina",
+                 "Strength",
+                 "Speed"),
+        Value = c(2,4,6,9,3,5,10,1,7,3), stringsAsFactors=FALSE)
+
+wordcloud(datasetInput$Name, datasetInput$Value, scale=c(3,.5), 
+          max.words=100, random.order=TRUE, random.color=FALSE,
+          rot.per=0.5, use.r.layout=FALSE, colors=rainbow(10))
+```
+
+GPAT App
+========================================================
+- Visualization tool for fitness assessment
+- Plot your General Physical Attributes Test
+- Plan your next training cycle
+
+
+https://troutbum.shinyapps.io/gpat/
